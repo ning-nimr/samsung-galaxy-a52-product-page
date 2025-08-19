@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung Galaxy A52 Product Page</title>
+    <style>
+        :root {
+            --primary-color: #1428a0;
+            --secondary-color: #5d87ff;
+            --accent-color: #00b2a9;
+            --light-gray: #f5f5f7;
+            --dark-gray: #333;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 3rem 0;
+            background-color: var(--white);
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .product-overview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+        
+        .features-list {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+        
+        .features-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .specs-table th, .specs-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .specs-table th {
+            background-color: var(--light-gray);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .reviews {
+            padding: 1rem;
+        }
+        
+        .review-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .stars {
+            color: gold;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .rating-chart {
+            width: 100%;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .product-overview {
+                flex-direction: column;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Samsung Galaxy A52 Product Page</h1>
+            <p>Experience the power of 5G with the amazing Galaxy A52</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="overview">
+            <div class="product-overview">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/61Vz+CqGE6L._AC_SL1500.jpg" alt="Samsung Galaxy A52 5G" />
+                </div>
+                <div class="product-info">
+                    <h2>Product Overview</h2>
+                    <p>The Samsung Galaxy A52 5G is a powerful mid-range smartphone that combines performance, style, and advanced features at an affordable price.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul class="features-list">
+                        <li>6.5" Infinity-O Full HD+ AMOLED display</li>
+                        <li>128GB of built-in storage (expandable up to 1TB)</li>
+                        <li>Octa-Core processor for smooth performance</li>
+                        <li>Quad Camera system with 32MP Front Camera</li>
+                        <li>5G connectivity for ultra-fast downloads</li>
+                        <li>4500mAh battery with long-lasting performance</li>
+                        <li>Android operating system with Samsung UI</li>
+                    </ul>
+                    
+                    <h3>Technical Specifications</h3>
+                    <table class="specs-table">
+                        <tr>
+                            <th>Display</th>
+                            <td>6.5" AMOLED, 1080x2400 resolution</td>
+                        </tr>
+                        <tr>
+                            <th>Processor</th>
+                            <td>Octa-Core Cortex, 2.2GHz</td>
+                        </tr>
+                        <tr>
+                            <th>RAM</th>
+                            <td>6GB</td>
+                        </tr>
+                        <tr>
+                            <th>Storage</th>
+                            <td>128GB (expandable up to 1TB)</td>
+                        </tr>
+                        <tr>
+                            <th>Battery</th>
+                            <td>4500mAh, up to 30 hours talk time</td>
+                        </tr>
+                        <tr>
+                            <th>Dimensions</th>
+                            <td>6.3 x 2.96 x 0.33 inches</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>6.6 ounces (0.41 pounds)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery">
+            <div class="container">
+                <h2>Image Gallery</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://m.media-amazon.com/images/I/61Vz+CqGE6L._AC_SL1500.jpg" alt="Samsung Galaxy A52 Front View" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://m.media-amazon.com/images/I/511CO3NrLHL._AC_SL1500.jpg" alt="Samsung Galaxy A52 Back View" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://m.media-amazon.com/images/I/21zMMj38hML._AC_SL1500.jpg" alt="Samsung Galaxy A52 Side View" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://m.media-amazon.com/images/I/41lbnI8fXcL._AC_SL1500.jpg" alt="Samsung Galaxy A52 Camera Detail" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="reviews">
+            <div class="container">
+                <h2>Customer Reviews</h2>
+                <div class="rating-chart">
+                    <canvas id="ratingChart"></canvas>
+                </div>
+                
+                <div class="reviews">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <h3>Great phone at a great price</h3>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p><strong>By Linda</strong> - December 31, 2021</p>
+                        <p>So far so good with this phone which I have had for less than a month. I got it to replace my S7 that, even after falling in the river, still worked but the battery life was pretty much done for. Also I wanted a 5G. This phone is a bit larger but not by much. The battery life is very long, the camera works well, screen resolution and volume are very good.</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <h3>As A Renewed Galaxy Excellent Value For the Price</h3>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p><strong>By John Galt 2021</strong> - February 14, 2022</p>
+                        <p>I received the phone on Saturday three days ahead of schedule. It was clear from the box the A52 5G came in that it was a renewed phone. I didn't see any scratches on the display. The display while not great in the bright sun is more than readable outdoors. The adaptive display feature works fine and doesn't dim the display too much in the dark.</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <h3>Best 2021 phone</h3>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <p><strong>By Rafa Valencia</strong> - January 25, 2022</p>
+                        <p>Mejor o igual que el galaxy s21</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="cta" class="cta">
+            <h2>Ready to Experience the Galaxy A52?</h2>
+            <p>Get yours today with fast shipping and excellent customer service!</p>
+            <a href="https://www.amazon.com/Samsung-Galaxy-Display-Camera-Smartphone/dp/B09C6LMM28" class="btn">Buy Now on Amazon - $144</a>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Samsung Galaxy A52 Product Page. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Rating distribution chart
+            const ctx = document.getElementById('ratingChart').getContext('2d');
+            const ratingChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
+                    datasets: [{
+                        label: 'Rating Distribution',
+                        data: [63, 13, 6, 3, 15],
+                        backgroundColor: [
+                            '#4CAF50',
+                            '#8BC34A',
+                            '#FFC107',
+                            '#FF9800',
+                            '#F44336'
+                        ],
+                        borderColor: [
+                            '#388E3C',
+                            '#689F38',
+                            '#FFA000',
+                            '#F57C00',
+                            '#D32F2F'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Customer Rating Distribution (%)'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
